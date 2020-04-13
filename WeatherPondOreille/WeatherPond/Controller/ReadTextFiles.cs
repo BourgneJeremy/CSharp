@@ -31,6 +31,10 @@ namespace WeatherPond.Controller
         /// <param name="dateAndTimeEnd">Ending datetime</param>
         public void ReadWeatherData(string dateAndTimeStart, string dateAndTimeEnd)
         {
+            Console.WriteLine(dateAndTimeStart);
+
+            Console.WriteLine(dateAndTimeEnd);
+
             #region Set file and user entry
             // file path
             string weatherData2012 = @"E:\Temp\WeatherPond\Environmental_Data_Deep_Moor_2012.txt";

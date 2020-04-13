@@ -73,5 +73,14 @@ namespace WeatherPond.Controller
 
             return "";
         }
+
+        public string ReadUserDateAndTime(string date, string time)
+        {
+            // process date
+            date = ConvertDateForWeather(date);
+            time = ConvertTimeForWeather(time);
+
+            return $"{date} {time}";
+        }
     }
 }

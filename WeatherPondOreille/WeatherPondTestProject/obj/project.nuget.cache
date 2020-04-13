@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YW2gUt7wnMlQxN/CG9fUdDs4UTUwhudliGtH8Pf36rZo0nuO5Nga7iTAC7BsY+xWgfrH6J9kk63rrpTHGOd/ig==",
+  "dgSpecHash": "wBHN407UvHuL5EmSygWAFFWaBc2xZzlnV6QHM/Pw/TD6cDI4+DVBIK6NuBDMPnqEMHqvtiGR84fXSQ09om+l/w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bourgne\\source\\repos\\WeatherPondOreille\\WeatherPondTestProject\\WeatherPondTestProject.csproj",
+  "projectFilePath": "C:\\Users\\Bourgne\\source\\repos\\CSharp\\WeatherPondOreille\\WeatherPondTestProject\\WeatherPondTestProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bourgne\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\Bourgne\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",

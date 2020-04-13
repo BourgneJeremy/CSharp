@@ -11,19 +11,28 @@ namespace WeatherPond
     {
         static void Main(string[] args)
         {
-            // user entries
-            Console.WriteLine("Enter a date date (as mm/dd/yyyy): ");
-            string date = Console.ReadLine();
+            // user date
+            Console.WriteLine("Enter a starting date (as mm/dd/yyyy): ");
+            string dateStart = Console.ReadLine();
+            // user time
+            Console.WriteLine("Enter a starting time (as hh:mm:ss): ");
+            string timeStart = Console.ReadLine();
 
-            // process date
-            DateAndTime manageDateTime = new DateAndTime();
-            date = manageDateTime.ConvertDateForWeather(date);
+            DateAndTime dt = new DateAndTime();
+            string startDateAndTime = dt.ReadUserDateAndTime(dateStart, timeStart);
 
-            Console.WriteLine(date);
+            // user date
+            Console.WriteLine("Enter an ending date (as mm/dd/yyyy): ");
+            string dateEnd = Console.ReadLine();
+            // user time
+            Console.WriteLine("Enter an ending time (as hh:mm:ss): ");
+            string timeEnd = Console.ReadLine();
+
+            string endDateAndTime = dt.ReadUserDateAndTime(dateEnd, timeEnd);
 
             ReadTextFiles rd = new ReadTextFiles();
 
-            rd.ReadWeatherData("2012_01_01 00:02:14", "2012_01_01 00:33:31");
+            rd.ReadWeatherData(startDateAndTime, endDateAndTime);
             Console.ReadLine();
         }
     }
