@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherPond", "WeatherPond\WeatherPond.csproj", "{DE28108B-B1F2-43D1-BCEE-9A4B9C1AA13D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherPondTestProject", "WeatherPondTestProject\WeatherPondTestProject.csproj", "{7863E875-F8DB-4291-8F6B-625D366A7F73}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE28108B-B1F2-43D1-BCEE-9A4B9C1AA13D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE28108B-B1F2-43D1-BCEE-9A4B9C1AA13D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE28108B-B1F2-43D1-BCEE-9A4B9C1AA13D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE28108B-B1F2-43D1-BCEE-9A4B9C1AA13D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7863E875-F8DB-4291-8F6B-625D366A7F73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7863E875-F8DB-4291-8F6B-625D366A7F73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7863E875-F8DB-4291-8F6B-625D366A7F73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7863E875-F8DB-4291-8F6B-625D366A7F73}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9FC1A4F-4843-452E-A838-BE6964CF21B5}
+	EndGlobalSection
+EndGlobal
