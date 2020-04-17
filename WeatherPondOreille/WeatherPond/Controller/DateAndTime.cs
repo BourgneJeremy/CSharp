@@ -47,20 +47,11 @@ namespace WeatherPond.Controller
 
         public string ConvertTimeForWeather(string time)
         {
-            string[] timeSplit = time.Split(':');
-
             try
             {
                 // convert to integer
-                int hours = int.Parse(timeSplit[0]);
-                int minutes = int.Parse(timeSplit[1]);
-                int seconds = int.Parse(timeSplit[2]);
-
-                string hoursResult = (hours < 10) ? $"0{hours}" : $"{hours}";
-                string minutesResult = (minutes < 10) ? $"0{minutes}" : $"{minutes}";
-                string secondsResult = (seconds < 10) ? $"0{seconds}" : $"{seconds}";
-
-                return $"{hoursResult}:{minutesResult}:{secondsResult}";
+                int hours = int.Parse(time);
+                return $"{hours}";
             }
             catch (IndexOutOfRangeException)
             {

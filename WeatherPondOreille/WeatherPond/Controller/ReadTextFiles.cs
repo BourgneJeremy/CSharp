@@ -29,12 +29,8 @@ namespace WeatherPond.Controller
         /// </summary>
         /// <param name="dateAndTimeStart">Starting datetime</param>
         /// <param name="dateAndTimeEnd">Ending datetime</param>
-        public void ReadWeatherData(string dateAndTimeStart, string dateAndTimeEnd)
+        public List<WeatherItem> ReadWeatherData(string dateAndTimeStart, string dateAndTimeEnd)
         {
-            Console.WriteLine(dateAndTimeStart);
-
-            Console.WriteLine(dateAndTimeEnd);
-
             #region Set file and user entry
             // file path
             string weatherData2012 = @"E:\Temp\WeatherPond\Environmental_Data_Deep_Moor_2012.txt";
@@ -53,6 +49,10 @@ namespace WeatherPond.Controller
             #endregion
 
             #region Loop through the lines to show data between start and end datetime
+
+            // Setup a list of weatherItems
+            List<WeatherItem> weatherItems = new List<WeatherItem>();
+
             foreach (string line in lines)
             {
                 // we don't display the first line (the one which starts with 'date')
@@ -71,23 +71,27 @@ namespace WeatherPond.Controller
                     // when the parsing works we associate the value with the weather item
                     weatherItem.BarometricPress = barometricPress;
 
-                    if (weatherItem.Date == dateStart && weatherItem.Time == timeStart)
+                    if (weatherItem.Date == dateStart && weatherItem.Time.StartsWith(timeStart) && !IsStartDateFound)
                     {
-                        Console.WriteLine($"Starting point: {weatherItem}");
+                        // Console.WriteLine($"Starting point: {weatherItem}");
+                        // -------- CHANGE
+                        // weatherItems.Add(weatherItem);
                         IsStartDateFound = true;
                     } 
-                    else if (weatherItem.Date == dateEnd && weatherItem.Time == timeEnd)
+                    else if (weatherItem.Date == dateEnd && weatherItem.Time.StartsWith(timeEnd))
                     {
-                        Console.WriteLine($"Ending point: {weatherItem}");
+                        // Console.WriteLine($"Ending point: {weatherItem}");
+                        weatherItems.Add(weatherItem);
                         IsEndDateFound = true;
                     }
-                    if (IsStartDateFound && !IsEndDateFound) Console.WriteLine(weatherItem);
+                    if (IsStartDateFound && !IsEndDateFound) weatherItems.Add(weatherItem);
                 }
             }
             // at the end loop, we reset the finding points to false 
             IsStartDateFound = false;
             IsEndDateFound = false;
 
+            return weatherItems;
             #endregion
         }
 

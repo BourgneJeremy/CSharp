@@ -46,23 +46,23 @@ namespace WeatherPondTestProject
         public void ConvertTimeForWeatherTest()
         {
             // Arrange
-            string time = "10:29:03";
-            string expectedTime = "10:29:03";
+            string time = "10";
+            string expectedTime = "10";
             DateAndTime dt = new DateAndTime();
 
             // Act
             string resultTime = dt.ConvertTimeForWeather(time);
 
             // Assert
-            Assert.AreEqual(expectedTime, resultTime, "Expected 10:29:03 to be 10:29:03");
+            Assert.AreEqual(expectedTime, resultTime, "Expected 10 to be 10");
         }
         
         [TestMethod]
         public void ConvertTimeForWeatherTest_DoesNotReturnCorrectString()
         {
             // Arrange
-            string time = "10:29:15";
-            string expectedTime = "10:29:03";
+            string time = "00";
+            string expectedTime = "10";
             DateAndTime dt = new DateAndTime();
 
             // Act
