@@ -29,11 +29,14 @@ namespace WeatherPond.Controller
         /// </summary>
         /// <param name="dateAndTimeStart">Starting datetime</param>
         /// <param name="dateAndTimeEnd">Ending datetime</param>
-        public List<WeatherItem> ReadWeatherData(string dateAndTimeStart, string dateAndTimeEnd)
+        public List<WeatherItem> ReadYear(string dateAndTimeStart, string dateAndTimeEnd)
         {
             #region Set file and user entry
+
+            string year = dateAndTimeStart.Split('_')[0];
+
             // file path
-            string weatherData2012 = @"E:\Temp\WeatherPond\Environmental_Data_Deep_Moor_2012.txt";
+            string weatherData2012 = $"E:\\Temp\\WeatherPond\\Environmental_Data_Deep_Moor_{year}.txt";
 
             // read the lines from the text file
             List<string> lines = File.ReadAllLines(weatherData2012).ToList();
@@ -96,6 +99,166 @@ namespace WeatherPond.Controller
         }
 
         /// <summary>
+        /// Read the passed in parameter
+        /// </summary>
+        /// <param name="year">The current year</param>
+        /// <returns></returns>
+        public List<WeatherItem> ReadFullYear(int year)
+        {
+            // file path
+            string weatherData = $"E:\\Temp\\WeatherPond\\Environmental_Data_Deep_Moor_{year}.txt";
+
+            // read the lines from the text file
+            List<string> lines = File.ReadAllLines(weatherData).ToList();
+
+            // Setup a list of weatherItems
+            List<WeatherItem> weatherItems = new List<WeatherItem>();
+
+            foreach (string line in lines)
+            {
+                // we don't display the first line (the one which starts with 'date')
+                if (!line.StartsWith("date"))
+                {
+                    string[] entries = line.Split(Whitespace);
+                    WeatherItem weatherItem = new WeatherItem();
+
+                    weatherItem.Date = entries[0];
+                    weatherItem.Time = entries[1];
+
+                    // parse the barometric pressure to the type double
+                    double barometricPress = 0;
+                    double.TryParse(entries[3], out barometricPress);
+
+                    // when the parsing works we associate the value with the weather item
+                    weatherItem.BarometricPress = barometricPress;
+
+                    weatherItems.Add(weatherItem);
+                }
+            }
+            return weatherItems;
+        }
+
+        /// <summary>
+        /// Read the specific start to the end of the file
+        /// </summary>
+        /// <param name="dateAndTimeStart">Start date and time</param>
+        /// <returns></returns>
+        public List<WeatherItem> ReadYearStart(string dateAndTimeStart)
+        {
+            string date = dateAndTimeStart.Split(Whitespace)[0];
+            string time = dateAndTimeStart.Split(Whitespace)[1];
+
+            // get the year
+            string year = date.Split('_')[0];
+            string month = date.Split('_')[1];
+            string day = date.Split('_')[2];
+
+            // read the file of the year
+            // file path
+            string weatherData = $"E:\\Temp\\WeatherPond\\Environmental_Data_Deep_Moor_{year}.txt";
+
+            // read the lines from the text file
+            List<string> lines = File.ReadAllLines(weatherData).ToList();
+
+            // Setup a list of weatherItems
+            List<WeatherItem> weatherItems = new List<WeatherItem>();
+
+            foreach (string line in lines)
+            {
+                // we don't display the first line (the one which starts with 'date')
+                if (!line.StartsWith("date"))
+                {
+                    string[] entries = line.Split(Whitespace);
+                    WeatherItem weatherItem = new WeatherItem();
+
+                    weatherItem.Date = entries[0];
+                    weatherItem.Time = entries[1];
+
+                    // parse the barometric pressure to the type double
+                    double barometricPress = 0;
+                    double.TryParse(entries[3], out barometricPress);
+
+                    // when the parsing works we associate the value with the weather item
+                    weatherItem.BarometricPress = barometricPress;
+
+                    // start the reading when you encounter the dateAndTimeStart
+                    if (weatherItem.Date == date && weatherItem.Time.StartsWith(time) && !IsStartDateFound)
+                    {
+                        IsStartDateFound = true;
+                    }
+                    if (IsStartDateFound)
+                    {
+                        weatherItems.Add(weatherItem);
+                    }
+                }
+            }
+            // reset before sending
+            IsStartDateFound = false;
+
+            return weatherItems;
+        }
+
+        /// <summary>
+        /// Read the specific end to the end of the file
+        /// </summary>
+        /// <param name="dateAndTimeEnd">End date and time</param>
+        /// <returns></returns>
+        public List<WeatherItem> ReadYearEnd(string dateAndTimeEnd)
+        {
+            string date = dateAndTimeEnd.Split(Whitespace)[0];
+            string time = dateAndTimeEnd.Split(Whitespace)[1];
+
+            // get the year
+            string year = date.Split('_')[0];
+            string month = date.Split('_')[1];
+            string day = date.Split('_')[2];
+
+            // read the file of the year
+            // file path
+            string weatherData = $"E:\\Temp\\WeatherPond\\Environmental_Data_Deep_Moor_{year}.txt";
+
+            // read the lines from the text file
+            List<string> lines = File.ReadAllLines(weatherData).ToList();
+
+            // Setup a list of weatherItems
+            List<WeatherItem> weatherItems = new List<WeatherItem>();
+
+            foreach (string line in lines)
+            {
+                // we don't display the first line (the one which starts with 'date')
+                if (!line.StartsWith("date"))
+                {
+                    string[] entries = line.Split(Whitespace);
+                    WeatherItem weatherItem = new WeatherItem();
+
+                    weatherItem.Date = entries[0];
+                    weatherItem.Time = entries[1];
+
+                    // parse the barometric pressure to the type double
+                    double barometricPress = 0;
+                    double.TryParse(entries[3], out barometricPress);
+
+                    // when the parsing works we associate the value with the weather item
+                    weatherItem.BarometricPress = barometricPress;
+
+                    // start the reading when you encounter the dateAndTimeStart
+                    if (weatherItem.Date == date && weatherItem.Time.StartsWith(time) && !IsEndDateFound)
+                    {
+                        IsEndDateFound = true;
+                    }
+                    if (!IsEndDateFound)
+                    {
+                        weatherItems.Add(weatherItem);
+                    }
+                }
+            }
+            // reset before sending
+            IsStartDateFound = false;
+
+            return weatherItems;
+        }
+
+        /// <summary>
         /// Get the date from the date and time
         /// </summary>
         /// <param name="dateAndTime">User entry</param>
@@ -115,6 +278,28 @@ namespace WeatherPond.Controller
         {
             string[] dateAndTimeTab = dateAndTime.Split(Whitespace);
             return dateAndTimeTab[1];
+        }
+
+        /// <summary>
+        /// Display the weather items
+        /// </summary>
+        /// <param name="weatherItems">Result list</param>
+        public void DisplayItems(List<WeatherItem> weatherItems)
+        {
+            foreach (WeatherItem weather in weatherItems)
+            {
+                Console.WriteLine(weather);
+            }
+
+            /*for (int i = 0; i < weatherItems.Count; i++)
+            {
+                if (i == 0 || i == weatherItems.Count - 1)
+                {
+                    Console.WriteLine(weatherItems[i]);
+                }
+            }*/
+
+            Console.ReadLine();
         }
     }
 }

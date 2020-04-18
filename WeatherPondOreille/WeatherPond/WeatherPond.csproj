@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\Menu.cs" />
     <Compile Include="Controller\DateAndTime.cs" />
     <Compile Include="Model\WeatherItem.cs" />
     <Compile Include="Program.cs" />

@@ -14,15 +14,15 @@ namespace WeatherPondTestProject
         public void ConvertDateForWeatherTest()
         {
             // Arrange
-            string date = "02/08/2012";
-            string expectedDate = "2012_08_02";
+            string date = "04/18/2012";
+            string expectedDate = "2012_04_18";
             DateAndTime dt = new DateAndTime();
 
             // Act
             string resultDate = dt.ConvertDateForWeather(date);
 
             // Assert
-            Assert.AreEqual(expectedDate, resultDate, "Expected 02/08/2012 to be 2012_08_02");
+            Assert.AreEqual(expectedDate, resultDate, "Expected 04/18/2012 to be 2012_04_18");
         }
 
         [TestMethod]
@@ -37,7 +37,7 @@ namespace WeatherPondTestProject
             string resultDate = dt.ConvertDateForWeather(date);
 
             // Assert
-            Assert.AreNotEqual(expectedDate, resultDate, "Expected 02/08/2012 to be 2012_08_02");
+            Assert.AreNotEqual(expectedDate, resultDate, "Expected 0208/2012 to return not correct string");
         }
         #endregion
 
@@ -46,22 +46,22 @@ namespace WeatherPondTestProject
         public void ConvertTimeForWeatherTest()
         {
             // Arrange
-            string time = "10";
-            string expectedTime = "10";
+            string time = "5";
+            string expectedTime = "05";
             DateAndTime dt = new DateAndTime();
 
             // Act
             string resultTime = dt.ConvertTimeForWeather(time);
 
             // Assert
-            Assert.AreEqual(expectedTime, resultTime, "Expected 10 to be 10");
+            Assert.AreEqual(expectedTime, resultTime, "Expected 5 to be 05");
         }
         
         [TestMethod]
         public void ConvertTimeForWeatherTest_DoesNotReturnCorrectString()
         {
             // Arrange
-            string time = "00";
+            string time = "05";
             string expectedTime = "10";
             DateAndTime dt = new DateAndTime();
 
@@ -78,25 +78,25 @@ namespace WeatherPondTestProject
         public void ReadUserDateAndTimeTest()
         {
             // Arrange
-            string date = "23/09/2012";
-            string time = "08:18:08";
-            string expectedDateAndTime = "2012_09_23 08:18:08";
+            string date = "09/23/2012";
+            string time = "08";
+            string expectedDateAndTime = "2012_09_23 08";
             DateAndTime dt = new DateAndTime();
 
             // Act
             string dateAndTimeResult = dt.ReadUserDateAndTime(date, time);
 
             // Assert
-            Assert.AreEqual(expectedDateAndTime, dateAndTimeResult, "Expected [date: 23/09/2012; time: 08:18:08] to be 2012_09_23 08:18:08");
+            Assert.AreEqual(expectedDateAndTime, dateAndTimeResult, "Expected [date: 09/23/2012; time: 08] to be 2012_09_23 08");
         }
         
         [TestMethod]
         public void ReadUserDateAndTimeTest_DoesNotReturnCorrectString()
         {
             // Arrange
-            string date = "23_09_2012";
-            string time = "08:18:08";
-            string expectedDateAndTime = "2012_09_23 08:18:08";
+            string date = "09/23/2012";
+            string time = "Problem";
+            string expectedDateAndTime = "2012_09_23 08";
             DateAndTime dt = new DateAndTime();
 
             // Act

@@ -55,7 +55,7 @@ namespace WeatherPondTestProject
             List<WeatherItem> expectedWeatherItems = WeatherData();
 
             // Act
-            List<WeatherItem> weatherItemsResult = rd.ReadWeatherData(startDateAndTime, endDateAndTime);
+            List<WeatherItem> weatherItemsResult = rd.ReadYear(startDateAndTime, endDateAndTime);
 
             // Assert
             for (int i = 0; i < expectedWeatherItems.Count; i++)

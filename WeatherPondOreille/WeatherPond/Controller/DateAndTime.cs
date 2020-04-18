@@ -24,8 +24,8 @@ namespace WeatherPond.Controller
             try
             {
                 // convert to integer
-                int day = int.Parse(dateSplit[0]);
-                int month = int.Parse(dateSplit[1]);
+                int day = int.Parse(dateSplit[1]);
+                int month = int.Parse(dateSplit[0]);
                 int year = int.Parse(dateSplit[2]);
 
                 string dayResult = (day < 10) ? $"0{day}" : $"{day}";
@@ -51,7 +51,9 @@ namespace WeatherPond.Controller
             {
                 // convert to integer
                 int hours = int.Parse(time);
-                return $"{hours}";
+
+                string hoursResult = (hours < 10) ? $"0{hours}" : $"{hours}";
+                return hoursResult;
             }
             catch (IndexOutOfRangeException)
             {
