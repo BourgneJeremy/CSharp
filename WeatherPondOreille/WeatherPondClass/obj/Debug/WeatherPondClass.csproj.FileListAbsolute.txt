@@ -1,0 +1,6 @@
+C:\Users\Bourgne\source\repos\CSharp\WeatherPondOreille\WeatherPondClass\bin\Debug\WeatherPondClass.dll
+C:\Users\Bourgne\source\repos\CSharp\WeatherPondOreille\WeatherPondClass\bin\Debug\WeatherPondClass.pdb
+C:\Users\Bourgne\source\repos\CSharp\WeatherPondOreille\WeatherPondClass\obj\Debug\WeatherPondClass.csprojAssemblyReference.cache
+C:\Users\Bourgne\source\repos\CSharp\WeatherPondOreille\WeatherPondClass\obj\Debug\WeatherPondClass.csproj.CoreCompileInputs.cache
+C:\Users\Bourgne\source\repos\CSharp\WeatherPondOreille\WeatherPondClass\obj\Debug\WeatherPondClass.dll
+C:\Users\Bourgne\source\repos\CSharp\WeatherPondOreille\WeatherPondClass\obj\Debug\WeatherPondClass.pdb

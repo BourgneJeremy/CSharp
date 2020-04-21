@@ -12,12 +12,10 @@ namespace WeatherPond
     {
         static void Main(string[] args)
         {
-            /* Menu menu = new Menu();
-            menu.Launch(); */
-            ReadTextFiles rd = new ReadTextFiles();
+            Menu menu = new Menu();
+            menu.Launch();
 
-            List<WeatherItem> resultWeatherItems = rd.ReadYearEnd("2012_08_03 15");
-            // rd.DisplayItems(resultWeatherItems);
+            Console.ReadLine();
         }
     }
 }

@@ -4,6 +4,17 @@
     "C:\\Users\\Bourgne\\source\\repos\\CSharp\\WeatherPondOreille\\WeatherPondTestProject\\WeatherPondTestProject.csproj": {}
   },
   "projects": {
+    "C:\\Users\\Bourgne\\source\\repos\\CSharp\\WeatherPondOreille\\WeatherPondClass\\WeatherPondClass.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Bourgne\\source\\repos\\CSharp\\WeatherPondOreille\\WeatherPondClass\\WeatherPondClass.csproj",
+        "projectName": "WeatherPondClass",
+        "projectPath": "C:\\Users\\Bourgne\\source\\repos\\CSharp\\WeatherPondOreille\\WeatherPondClass\\WeatherPondClass.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
     "C:\\Users\\Bourgne\\source\\repos\\CSharp\\WeatherPondOreille\\WeatherPondTestProject\\WeatherPondTestProject.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -30,8 +41,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Bourgne\\source\\repos\\CSharp\\WeatherPondOreille\\WeatherPond\\WeatherPond.csproj": {
-                "projectPath": "C:\\Users\\Bourgne\\source\\repos\\CSharp\\WeatherPondOreille\\WeatherPond\\WeatherPond.csproj"
+              "C:\\Users\\Bourgne\\source\\repos\\CSharp\\WeatherPondOreille\\WeatherPondClass\\WeatherPondClass.csproj": {
+                "projectPath": "C:\\Users\\Bourgne\\source\\repos\\CSharp\\WeatherPondOreille\\WeatherPondClass\\WeatherPondClass.csproj"
               }
             }
           }
@@ -89,17 +100,6 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
-      }
-    },
-    "C:\\Users\\Bourgne\\source\\repos\\CSharp\\WeatherPondOreille\\WeatherPond\\WeatherPond.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Bourgne\\source\\repos\\CSharp\\WeatherPondOreille\\WeatherPond\\WeatherPond.csproj",
-        "projectName": "WeatherPond",
-        "projectPath": "C:\\Users\\Bourgne\\source\\repos\\CSharp\\WeatherPondOreille\\WeatherPond\\WeatherPond.csproj"
-      },
-      "frameworks": {
-        "net472": {}
       }
     }
   }

@@ -5,10 +5,3 @@ C:\Users\Bourgne\source\repos\WeatherPondOreille\WeatherPond\obj\Debug\WeatherPo
 C:\Users\Bourgne\source\repos\WeatherPondOreille\WeatherPond\obj\Debug\WeatherPond.csproj.CoreCompileInputs.cache
 C:\Users\Bourgne\source\repos\WeatherPondOreille\WeatherPond\obj\Debug\WeatherPond.exe
 C:\Users\Bourgne\source\repos\WeatherPondOreille\WeatherPond\obj\Debug\WeatherPond.pdb
-C:\Users\Bourgne\source\repos\CSharp\WeatherPondOreille\WeatherPond\bin\Debug\WeatherPond.exe.config
-C:\Users\Bourgne\source\repos\CSharp\WeatherPondOreille\WeatherPond\bin\Debug\WeatherPond.exe
-C:\Users\Bourgne\source\repos\CSharp\WeatherPondOreille\WeatherPond\bin\Debug\WeatherPond.pdb
-C:\Users\Bourgne\source\repos\CSharp\WeatherPondOreille\WeatherPond\obj\Debug\WeatherPond.csprojAssemblyReference.cache
-C:\Users\Bourgne\source\repos\CSharp\WeatherPondOreille\WeatherPond\obj\Debug\WeatherPond.csproj.CoreCompileInputs.cache
-C:\Users\Bourgne\source\repos\CSharp\WeatherPondOreille\WeatherPond\obj\Debug\WeatherPond.exe
-C:\Users\Bourgne\source\repos\CSharp\WeatherPondOreille\WeatherPond\obj\Debug\WeatherPond.pdb

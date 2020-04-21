@@ -67,6 +67,14 @@ namespace WeatherPond.Controller
                     weatherItem.Date = entries[0];
                     weatherItem.Time = entries[1];
 
+                    //TODO
+                    // to solve hours problem in the 2013 file
+                    if (int.Parse(year) == 2013) 
+                    {
+                        timeStart = weatherItem.Time;
+                        timeEnd = weatherItem.Time;
+                    }
+
                     // parse the barometric pressure to the type double
                     double barometricPress = 0;
                     double.TryParse(entries[3], out barometricPress);
@@ -174,6 +182,10 @@ namespace WeatherPond.Controller
                     weatherItem.Date = entries[0];
                     weatherItem.Time = entries[1];
 
+                    //TODO
+                    // to solve hours problem in the 2013 file
+                    if (int.Parse(year) == 2013) time = weatherItem.Time;
+
                     // parse the barometric pressure to the type double
                     double barometricPress = 0;
                     double.TryParse(entries[3], out barometricPress);
@@ -234,6 +246,10 @@ namespace WeatherPond.Controller
                     weatherItem.Date = entries[0];
                     weatherItem.Time = entries[1];
 
+                    //TODO
+                    // to solve hours problem in the 2013 file
+                    if (int.Parse(year) == 2013) time = weatherItem.Time;
+
                     // parse the barometric pressure to the type double
                     double barometricPress = 0;
                     double.TryParse(entries[3], out barometricPress);
@@ -286,18 +302,19 @@ namespace WeatherPond.Controller
         /// <param name="weatherItems">Result list</param>
         public void DisplayItems(List<WeatherItem> weatherItems)
         {
-            foreach (WeatherItem weather in weatherItems)
+            /*foreach (WeatherItem weather in weatherItems)
             {
                 Console.WriteLine(weather);
-            }
+            }*/
+            Console.WriteLine(weatherItems.Count());
 
-            /*for (int i = 0; i < weatherItems.Count; i++)
+            for (int i = 0; i < weatherItems.Count; i++)
             {
                 if (i == 0 || i == weatherItems.Count - 1)
                 {
                     Console.WriteLine(weatherItems[i]);
                 }
-            }*/
+            }
 
             Console.ReadLine();
         }

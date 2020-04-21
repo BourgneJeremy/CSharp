@@ -1635,13 +1635,13 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
-      "WeatherPond/1.0.0": {
+      "WeatherPondClass/1.0.0": {
         "type": "project",
         "compile": {
-          "bin/placeholder/WeatherPond.dll": {}
+          "bin/placeholder/WeatherPondClass.dll": {}
         },
         "runtime": {
-          "bin/placeholder/WeatherPond.dll": {}
+          "bin/placeholder/WeatherPondClass.dll": {}
         }
       }
     }
@@ -5707,10 +5707,10 @@
         "system.xml.xdocument.nuspec"
       ]
     },
-    "WeatherPond/1.0.0": {
+    "WeatherPondClass/1.0.0": {
       "type": "project",
-      "path": "../WeatherPond/WeatherPond.csproj",
-      "msbuildProject": "../WeatherPond/WeatherPond.csproj"
+      "path": "../WeatherPondClass/WeatherPondClass.csproj",
+      "msbuildProject": "../WeatherPondClass/WeatherPondClass.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5718,7 +5718,7 @@
       "MSTest.TestAdapter >= 2.1.0",
       "MSTest.TestFramework >= 2.1.0",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
-      "WeatherPond >= 1.0.0",
+      "WeatherPondClass >= 1.0.0",
       "coverlet.collector >= 1.2.0"
     ]
   },
@@ -5752,8 +5752,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Bourgne\\source\\repos\\CSharp\\WeatherPondOreille\\WeatherPond\\WeatherPond.csproj": {
-              "projectPath": "C:\\Users\\Bourgne\\source\\repos\\CSharp\\WeatherPondOreille\\WeatherPond\\WeatherPond.csproj"
+            "C:\\Users\\Bourgne\\source\\repos\\CSharp\\WeatherPondOreille\\WeatherPondClass\\WeatherPondClass.csproj": {
+              "projectPath": "C:\\Users\\Bourgne\\source\\repos\\CSharp\\WeatherPondOreille\\WeatherPondClass\\WeatherPondClass.csproj"
             }
           }
         }

@@ -2,8 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using WeatherPond.Controller;
-using WeatherPond.Model;
+using WeatherPondClass.Controller;
+using WeatherPondClass.Model;
 
 namespace WeatherPondTestProject
 {
